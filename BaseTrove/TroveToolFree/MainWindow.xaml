@@ -1,0 +1,70 @@
+﻿<Controls:MetroWindow x:Class="TroveToolFree.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        TitleCaps="False" BorderBrush="Black" BorderThickness="1" ResizeMode="CanMinimize"                   
+        Title="Trove Tool For Free" Height="199" Width="446" WindowStartupLocation="CenterScreen" Loaded="MetroWindow_Loaded">
+    <!-- Menu Suspenso -->
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+
+            <Button x:Name="CMD_" Click="CMD__Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20" Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill"
+                         Visual="{StaticResource appbar_ie}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0"
+                                   VerticalAlignment="Center"
+                                   Text="Support" />
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="CMD__" Click="CMD__Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20" Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill"
+                         Visual="{StaticResource appbar_eye}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0"
+                                   VerticalAlignment="Center"
+                                   Text="About" />
+                </StackPanel>
+            </Button>
+            
+            
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <!-- -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Canvas HorizontalAlignment="Left" Height="121" Margin="10,10,0,0" VerticalAlignment="Top" Width="424">
+            <CheckBox x:Name="CHK_SPEED" Content="Max Speed" Canvas.Left="10" Canvas.Top="29" Width="87" Checked="CHK_SPEED_Checked" Unchecked="CHK_SPEED_Unchecked"/>
+            <CheckBox x:Name="CHK_ATTACK_SPEED" Content="Max Attack Speed" Canvas.Left="10" Canvas.Top="52" Width="124"/>
+            <CheckBox x:Name="CHK_JUMP" Content="Max Jump's" Canvas.Left="10" Canvas.Top="75" Width="87"/>
+            <CheckBox x:Name="CHK_ENERGY" Content="No energy cost" Canvas.Left="10" Canvas.Top="98" Width="107"/>
+            <Label Content="Select the options" Canvas.Top="6" Foreground="#FF002EFF" />
+            <Label Content="Release the camera" Foreground="#FF002EFF" Height="23" Canvas.Left="291" Canvas.Top="6" Width="140" />
+            <CheckBox x:Name="CHK_CAM" Content="Activate" Height="18" Canvas.Left="300" Canvas.Top="29" Width="114"/>
+            <Label Content="NUMPAD + Increases Zoom" Foreground="Blue" Height="23" Canvas.Left="275" Canvas.Top="52" Width="165" FontSize="10" />
+            <Label Content="NUMPAD - Decreases Zoom" Foreground="Blue" Height="23" Canvas.Left="275" Canvas.Top="75" Width="165" FontSize="10" />
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="36" Margin="10,136,0,0" VerticalAlignment="Top" Width="424">
+            <Label Content="Compiled :" Canvas.Left="10" Canvas.Top="6" Foreground="#FF002EFF" />
+            <Label x:Name="LBL_DLL_COMPILED" Content=". . ." Canvas.Left="72" Canvas.Top="6" Foreground="Red" />
+            <Label Content="Status :" Canvas.Left="173" Canvas.Top="6" Foreground="#FF002EFF" />
+            <Label x:Name="LBL_STATUS" Content=". . ." Canvas.Left="226" Canvas.Top="6" Foreground="Red" Width="188" />
+        </Canvas>
+
+
+    </Grid>
+</Controls:MetroWindow>
